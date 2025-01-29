@@ -29,10 +29,10 @@ def load_payloads(filename):
         messagebox.showerror("Error", f"Payload file {filename} not found!")
         return []
 
-sql_payloads = load_payloads('sql.txt')
-xss_payloads = load_payloads('xss.txt')
-rce_payloads = load_payloads('rce.txt')
-param_pollution_payloads = load_payloads('param_pollution.txt')
+sql_payloads = load_payloads('payloads/sql.txt')
+xss_payloads = load_payloads('payloads/xss.txt')
+rce_payloads = load_payloads('payloads/rce.txt')
+param_pollution_payloads = load_payloads('payloads/param_pollution.txt')
 
 def send_request(url, payload, method="GET"):
     try:

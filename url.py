@@ -310,7 +310,7 @@ progress.grid(row=4, column=0, columnspan=2, padx=10, pady=10, sticky="EW")
 style = ttk.Style(root)
 style.configure("green.Horizontal.TProgressbar", troughcolor='white', background='green')
 
-# Initialize global variables
+# Initializing global variables
 fuzzing_active = False
 custom_payloads = []
 
